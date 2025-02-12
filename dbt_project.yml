@@ -46,5 +46,3 @@ models:
   post-hook:
     - "update {{env_var('DBT_AUDITSCHEMA', 'AUDITING_DEV')}}.models_auditing_log set endtime=current_timestamp(),duration=datediff('second',starttime,current_timestamp()) "
 
-on-run-start: "use warehouse loading_wh;"
-on-run-end: "grant select on table staging_dev.stg_customers to public;"
